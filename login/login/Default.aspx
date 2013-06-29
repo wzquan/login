@@ -5,10 +5,36 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
 <script type="text/javascript" >
-    function check(form) {
-        if (username.value == "" || password.value == "") {
-            alert("用户名或密码不能为空！");
+    function checknull(form) {
+        if (username.value == "" ) {
+           // alert("用户名或密码不能为空！");
+            document.getElementById("warnname").innerText = "用户名不能为空";
             username.focus();
+        }
+        else
+            document.getElementById("warnname").innerText = "";
+        if (password.value == "") {
+            document.getElementById("warnpassword").innerText = "密码不能为空";
+            username.focus();
+        }
+        else
+            document.getElementById("warnpassword").innerText = "";
+    }
+    function check_login() {
+
+        var Obj = document.getElementById("username");
+        if (Obj.value == "") {
+            alert("请输入用户名!");
+            Obj.focus();
+            return false;
+        }
+
+
+        Obj = document.getElementById("password");
+        if (Obj.value == "") {
+            alert("请输入密码!");
+            Obj.focus();
+            return false;
         }
     }
 </script> 
@@ -25,13 +51,15 @@
     </div>
     <p>
         <asp:Label ID="Label2" runat="server" Text="用户："></asp:Label>
-        <asp:TextBox ID="username" runat="server" onMouseOut="check('this.form')"></asp:TextBox>
+        <asp:TextBox ID="username" runat="server"  onchange="checknull('this.form')"></asp:TextBox>
+        <asp:Label ID="warnname" runat="server" Text=""></asp:Label>
     </p>
     <p>
         <asp:Label ID="Label3" runat="server" Text="密码："></asp:Label>
-        <asp:TextBox ID="password" TextMode="Password" runat="server" onMouseOut="check('this.form')"></asp:TextBox>
+        <asp:TextBox ID="password" TextMode="Password" runat="server" onMouseOut="checknull('this.form')"></asp:TextBox>
+        <asp:Label ID="warnpassword" runat="server" Text=""></asp:Label>
     </p>
-    <asp:Button ID="login" runat="server" onclick="Button1_Click" Text="登录" />
+    <asp:Button ID="login" runat="server"  OnClientClick="return check_login()" onclick="Button1_Click" Text="登录" />
     </form>
 </body>
 </html>
