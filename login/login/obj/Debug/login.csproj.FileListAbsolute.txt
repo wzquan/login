@@ -1,0 +1,5 @@
+C:\Users\WUZHENQUAN\documents\visual studio 2010\Projects\login\login\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\WUZHENQUAN\documents\visual studio 2010\Projects\login\login\bin\login.dll
+C:\Users\WUZHENQUAN\documents\visual studio 2010\Projects\login\login\bin\login.pdb
+C:\Users\WUZHENQUAN\documents\visual studio 2010\Projects\login\login\obj\Debug\login.dll
+C:\Users\WUZHENQUAN\documents\visual studio 2010\Projects\login\login\obj\Debug\login.pdb
