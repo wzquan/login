@@ -7,13 +7,14 @@
 <script type="text/javascript" >
     function checknull(form) {
         if (username.value == "" ) {
-           // alert("用户名或密码不能为空！");
+            alert("用户名不能为空！");
             document.getElementById("warnname").innerText = "用户名不能为空";
             username.focus();
         }
         else
             document.getElementById("warnname").innerText = "";
         if (password.value == "") {
+            alert("密码不能为空！");
             document.getElementById("warnpassword").innerText = "密码不能为空";
             username.focus();
         }
@@ -51,7 +52,7 @@
     </div>
     <p>
         <asp:Label ID="Label2" runat="server" Text="用户："></asp:Label>
-        <asp:TextBox ID="username" runat="server"  onchange="checknull('this.form')"></asp:TextBox>
+        <asp:TextBox ID="username" runat="server"  onMouseOut="checknull('this.form')"></asp:TextBox>
         <asp:Label ID="warnname" runat="server" Text=""></asp:Label>
     </p>
     <p>
